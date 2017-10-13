@@ -10,8 +10,8 @@ paradero = ' '.join(sys.argv[1:])
 
 rs = requests.session()
 url = 'http://www.transantiago.cl/predictor/prediccion?codsimt='
-url_final = '%s%s' % (url,paradero.upper())
-web = rs.get(url_final)
+ser = '&codser='
+url_final = '%s%s%s' % (url,paradero.upper(),ser)
 micro = web.json()
 x = 0
 busesno = []
